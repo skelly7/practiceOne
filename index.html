@@ -2,18 +2,60 @@
 <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 <a-scene>
   <a-assets>
-    <a-asset-item id="my-obj" src="diamond.obj"></a-asset-item>
-    <a-asset-item id="my-mtl" src="Model.mtl"></a-asset-item>
+    <a-asset-item id="my-obj" src="hand dryer.obj"></a-asset-item>
+    <a-asset-item id="my-mtl" src="hand dryer.mtl"></a-asset-item>
   </a-assets>
 
   <a-entity camera look-controls position="0 0 3"></a-entity>
 
-  <a-sky color="#82ccd7"></a-sky>
+  <a-sky color="#2ce5a1"></a-sky>
 
   <a-entity id="my-model"
     scale="1 1 1"
     position="0 0 0"
-    rotation="0 0 0"
+    rotation="0 0 270"
+            animation__move="property: position;
+      from: 2 -3 1;
+      to: -4 1 -4;
+      dur: 20000;
+      loop: true;
+      dir: alternate;
+      easing: easeInOutQuad;"
+            
     obj-model="obj: #my-obj; mtl: #my-mtl"></a-entity>
+  <a-entity 
+            scale="1 1 1"
+    rotation="0 0 0"
+    position="0 0 0"
+            animation__move1="property: position;
+      from: 8 -1 0;
+      to: -2 1 0;
+      dur: 5000;
+      loop: true;
+      dir: alternate;
+      easing: easeInOutQuad;"
+            geometry="primitive: cone; 
+            radiusBottom: .4; radiusTop: 0.1"
+              material="color: #54ac32;"></a-entity>
 
+<a-entity
+    scale="1 1 1"
+    rotation="0 0 0"
+    position="0 0 0"
+    animation="property: rotation;
+      to: 0 180 0;
+      dur: 2000;
+      loop: true;
+      dir: clockwise;
+      easing: easeInOutQuad;"
+    animation__move2="property: position;
+      from: 8 -1 0;
+      to: -2 1 0;
+      dur: 20000;
+      loop: true;
+      dir: alternate;
+      easing: easeInOutQuad;"
+    geometry="primitive: box;"
+    material="color: #c76ebc;"></a-entity>
+  
 </a-scene>
